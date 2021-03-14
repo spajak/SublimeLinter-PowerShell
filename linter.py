@@ -3,10 +3,10 @@ from base64 import b64encode
 
 class pwsh(Linter):
     analyzer_cmd = (
-        'Invoke-ScriptAnalyzer -ScriptDefinition ($input | Out-String) | '
+        '$p = Join-Path $HOME ".pwshlintrc"; $p = (Test-Path $p) ? $p : $false;'
+        'Invoke-ScriptAnalyzer -Settings:$p -ScriptDefinition ($INPUT | Out-String) | '
         'Select-Object -Property Line,Message,Severity,Column,RuleName | '
-        'ConvertTo-Csv -Delimiter "\t" -QuoteFields False | '
-        'Select-Object -Skip 1'
+        'ConvertTo-Csv -Delimiter "\t" -QuoteFields False | Select-Object -Skip 1;'
     )
     regex = (
         r'(?P<line>\d+)\t(?P<message>[^\t]+)\t'
@@ -19,6 +19,9 @@ class pwsh(Linter):
     }
     cmd = [
         'pwsh',
+        '-NoProfile',
+        '-OutputFormat',
+        'Text',
         '-EncodedCommand',
         b64encode(analyzer_cmd.encode('utf_16_le')).decode('ascii')
     ]
