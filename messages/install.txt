@@ -1,6 +1,6 @@
 SublimeLinter-contrib-pwsh
 -------------------------------
-This linter plugin for SublimeLinter provides an interface to PowerShell (>=7).
+This linter plugin for SublimeLinter provides an interface to PowerShell.
 
 For more information, please see:
-https://github.com/spajak/SublimeLinter-contrib-pwsh
+https://github.com/spajak/SublimeLinter-contrib-PSScriptAnalyzer
