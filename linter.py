@@ -4,7 +4,7 @@ import re
 import logging
 from base64 import b64encode
 
-logger = logging.getLogger('SublimeLinter.plugins.pylint')
+logger = logging.getLogger('SublimeLinter.plugins.PSScriptAnalyzer')
 
 class PSScriptAnalyzer(Linter):
     analyzer_cmd_template = (

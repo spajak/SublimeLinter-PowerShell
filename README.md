@@ -41,7 +41,7 @@ Example `PSScriptAnalyzerSettings.psd1` content:
 
 PSScriptAnalyzer's settings path/name can be customized:
 
-```json
+```
     "psscriptanalyzer": {
         // full path
         "settings": "D:\\Scripts\\CustomSettings.psd1"
