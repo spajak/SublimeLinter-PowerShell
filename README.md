@@ -3,7 +3,7 @@ SublimeLinter-contrib-PSScriptAnalyzer
 
 [![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-PSScriptAnalyzer.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-PSScriptAnalyzer)
 
-This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [PowerShell](https://github.com/PowerShell/PowerShell)'s [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) module. It will be used with files that have the “PowerShell” syntax.
+This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [PowerShell](https://github.com/PowerShell/PowerShell)'s [__PSScriptAnalyzer__](https://github.com/PowerShell/PSScriptAnalyzer) module. It will be used with files that have the “__PowerShell__” syntax.
 
 ## Installation
 SublimeLinter must be installed in order to use this plugin.
@@ -42,12 +42,14 @@ Example `PSScriptAnalyzerSettings.psd1` content:
 PSScriptAnalyzer's settings path/name can be customized:
 
 ```
+"linters": {
+    ...
     "psscriptanalyzer": {
         // full path
         "settings": "D:\\Scripts\\CustomSettings.psd1"
         // environment variables will be expanded
         "settings": "%SCRIPTS_DIR%\\CustomSettings.psd1"
-        // or preset name (beware that linting fails if the name is not a valid preset name)
+        // or built-in preset name (beware that linting fails if the name is not a valid preset name)
         "settings": "PSGallery"
         // default - remove or set to null
         "settings": null
@@ -61,4 +63,4 @@ PSScriptAnalyzer's settings path/name can be customized:
 
 ## TODO
 
- - Handle the case when given [Built-in Preset](https://github.com/PowerShell/PSScriptAnalyzer#built-in-presets) is not found by PSScriptAnalyzer.
+ - Handle the case when a given preset name is not found by PSScriptAnalyzer. Now it just fails to lint.
