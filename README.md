@@ -25,7 +25,7 @@ In order for `pwsh` to be executed by SublimeLinter, you must ensure that its pa
 If a file named `PSScriptAnalyzerSettings.psd1` exists in the user's home directory it's used as PSScriptAnalyzer's settings file when calling `Invoke-ScriptAnalyzer` cmdlet. Please refer to [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer#explicit) for details.
 
 Example `PSScriptAnalyzerSettings.psd1` content:
-```
+```powershell
 @{
     # Select which diagnostic records to show.
     # Valid values are: ParseError, Error, Warning, Information

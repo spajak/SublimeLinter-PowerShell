@@ -15,7 +15,7 @@ class PSScriptAnalyzer(Linter):
     regex = (
         r'(?P<line>\d+)\t(?P<message>[^\t]+)\t'
         r'((?P<error>ParseError|Error)|(?P<warning>Warning|Information))\t'
-        r'(?P<col>\d*)\t(?P<rule>[^\t]*)'
+        r'(?P<col>\d*)\t(?P<code>[^\t]*)'
     )
     multiline = False
     defaults = {
@@ -46,8 +46,3 @@ class PSScriptAnalyzer(Linter):
                 'PSScriptAnalyzerSettings.psd1'
             )
         return settings if os.path.isfile(settings) else None
-    def split_match(self, match):
-        result = super().split_match(match)
-        if result.rule:
-            result.message += ' (Rule: {0})'.format(result.rule)
-        return result
