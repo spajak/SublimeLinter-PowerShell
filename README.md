@@ -6,11 +6,13 @@ SublimeLinter-contrib-PSScriptAnalyzer
 This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [PowerShell](https://github.com/PowerShell/PowerShell)'s [__PSScriptAnalyzer__](https://github.com/PowerShell/PSScriptAnalyzer) module. It will be used with files that have the “__PowerShell__” syntax.
 
 ## Installation
+
 SublimeLinter must be installed in order to use this plugin.
 
 Please use [Package Control](https://packagecontrol.io) to install the linter plugin.
 
 Before installing this plugin, you must ensure that:
+
  - `pwsh` is installed on your system ([PowerShell Core](https://github.com/PowerShell/PowerShell)).
  - Module [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) is installed. If not, install it from PowerShell:
 
