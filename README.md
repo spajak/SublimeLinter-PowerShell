@@ -24,7 +24,8 @@ In order for `pwsh` to be executed by SublimeLinter, you must ensure that its pa
 
 If a file named `PSScriptAnalyzerSettings.psd1` exists in the user's home directory it's used as PSScriptAnalyzer's settings file when calling `Invoke-ScriptAnalyzer` cmdlet. Please refer to [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer#explicit) for details.
 
-Example `PSScriptAnalyzerSettings.psd1` content:
+Example content of a settings file:
+
 ```powershell
 @{
     # Select which diagnostic records to show.
@@ -39,7 +40,7 @@ Example `PSScriptAnalyzerSettings.psd1` content:
 }
 ```
 
-PSScriptAnalyzer's settings path/name can be customized:
+Path/name of the PSScriptAnalyzer's settings can be customized:
 
 ```
 "linters": {
@@ -56,11 +57,11 @@ PSScriptAnalyzer's settings path/name can be customized:
     }
 ```
 
-### General Settings
+## General Settings
 
 - SublimeLinter settings: http://sublimelinter.readthedocs.org/en/latest/settings.html
 - Linter settings: http://sublimelinter.readthedocs.org/en/latest/linter_settings.html
 
 ## TODO
 
- - Handle the case when a given preset name is not found by PSScriptAnalyzer. Now it just fails to lint.
+ - Handle the case when a given preset name is not a valid PSScriptAnalyzer preset. Now it just fails to lint.
